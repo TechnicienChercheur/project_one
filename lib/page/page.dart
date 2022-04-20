@@ -21,72 +21,112 @@ class _PageState extends State<Page1> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
+      child: Center(
+        child: Wrap(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CarouselSlider(
-                items: imgList
-                    .map(
-                      (item) => Container(
-                        child: Center(
-                          child: Image.asset(
-                            item,
-                            fit: BoxFit.cover,
-                            // width: 1500,
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CarouselSlider(
+                  items: imgList
+                      .map(
+                        (item) => Container(
+                          child: Center(
+                            child: Image.asset(
+                              item,
+                              fit: BoxFit.cover,
+                              // width: 1500,
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                    .toList(),
-                options: CarouselOptions(
-                  autoPlayInterval: const Duration(seconds: 2),
-                  autoPlay: true,
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
+                      )
+                      .toList(),
+                  options: CarouselOptions(
+                    autoPlayInterval: const Duration(seconds: 2),
+                    autoPlay: true,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                  ),
                 ),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            HomeBull(
-                "Children",
-                20,
-                "Information",
-                "about our establishments",
-                Colors.black,
-                Colors.white,
-                Colors.black54,
-                Colors.white,
-                Colors.black54,
-                Icons.person,
-                40,
-                200,
-                200,
-                6,
-                /*page,*/ context),
-            SizedBox(
-              height: 15,
+            Row(
+              children: [
+                HomeBull(
+                    titre: "Children",
+                    titreSize: 20,
+                    description1: "Information",
+                    description2: "about our establishments",
+                    titreColor: Colors.black,
+                    descriptionColor: Colors.white,
+                    containerColor: Colors.black54,
+                    iconColor: Colors.white,
+                    borderColor: Colors.black54,
+                    cicon: Icons.person,
+                    iconSise: 40,
+                    widthValue: 200,
+                    heightValue: 200,
+                    cRadius: 6,
+                    /*page,*/ context: context),
+                const SizedBox(
+                  width: 15,
+                ),
+                HomeBull(
+                    titre: "Children",
+                    titreSize: 20,
+                    description1: "Information",
+                    description2: "about our establishments",
+                    titreColor: Colors.black,
+                    descriptionColor: Colors.white,
+                    containerColor: Colors.black54,
+                    iconColor: Colors.white,
+                    borderColor: Colors.black54,
+                    cicon: Icons.person,
+                    iconSise: 40,
+                    widthValue: 200,
+                    heightValue: 200,
+                    cRadius: 6,
+                    /*page,*/ context: context),
+                HomeBull(
+                    titre: "Children",
+                    titreSize: 20,
+                    description1: "Information",
+                    description2: "about our establishments",
+                    titreColor: Colors.black,
+                    descriptionColor: Colors.white,
+                    containerColor: Colors.black54,
+                    iconColor: Colors.white,
+                    borderColor: Colors.black54,
+                    cicon: Icons.person,
+                    iconSise: 40,
+                    widthValue: 200,
+                    heightValue: 200,
+                    cRadius: 6,
+                    /*page,*/ context: context),
+                const SizedBox(
+                  width: 15,
+                ),
+                HomeBull(
+                    titre: "Children",
+                    titreSize: 20,
+                    description1: "Information",
+                    description2: "about our establishments",
+                    titreColor: Colors.black,
+                    descriptionColor: Colors.white,
+                    containerColor: Colors.black54,
+                    iconColor: Colors.white,
+                    borderColor: Colors.black54,
+                    cicon: Icons.person,
+                    iconSise: 40,
+                    widthValue: 200,
+                    heightValue: 200,
+                    cRadius: 6,
+                    /*page,*/ context: context),
+              ],
             ),
-            HomeBull(
-                "Children",
-                20,
-                "Information",
-                "about our establishments",
-                Colors.black,
-                Colors.white,
-                Colors.black54,
-                Colors.white,
-                Colors.black54,
-                Icons.person,
-                40,
-                200,
-                200,
-                6,
-                /*page,*/ context),
           ],
         ),
       ),
