@@ -15,51 +15,61 @@ GestureDetector HomeBull({
   double? widthValue,
   double? heightValue,
   double? cRadius,
-  //Widget page,
+  Widget? page,
   context,
 }) {
   return GestureDetector(
-    onTap: () {},
-    child: (Center(
-      child: Container(
-        height: widthValue,
-        width: widthValue,
-        decoration: BoxDecoration(
-          border: Border.all(color: borderColor!),
-          borderRadius: BorderRadius.circular(cRadius!),
-          color: containerColor,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Icon(
-              cicon,
-              size: iconSise,
-              color: iconColor,
-            ),
-            Text(
-              titre!,
+    onTap: () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => page!),
+      );
+    },
+    child: Container(
+      height: widthValue,
+      width: widthValue,
+      decoration: BoxDecoration(
+        border: Border.all(color: borderColor!),
+        borderRadius: BorderRadius.circular(cRadius!),
+        color: containerColor,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            cicon,
+            size: iconSise,
+            color: iconColor,
+          ),
+          Visibility(
+            visible: titre == null ? false : true,
+            child: Text(
+              titre == null ? "" : titre,
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: titreSize,
                   color: titreColor),
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              description1!,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Visibility(
+            visible: description1 == null ? false : true,
+            child: Text(
+              description1 == null ? "" : description1,
               style: TextStyle(
                   fontWeight: FontWeight.w300, color: descriptionColor),
             ),
-            Text(description2!,
+          ),
+          Visibility(
+            visible: description1 == null ? false : true,
+            child: Text(description2 == null ? "" : description2,
                 style: TextStyle(
-                    fontWeight: FontWeight.w300, color: descriptionColor))
-          ],
-        ),
+                    fontWeight: FontWeight.w300, color: descriptionColor)),
+          )
+        ],
       ),
-    )),
+    ),
   );
 }
